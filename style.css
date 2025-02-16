@@ -24,6 +24,8 @@ body {
     font-size: 1.6rem;
     font-family: "Poppins", serif;
     overflow: hidden;
+    /* remove a cor azul na versão mobile ao clique do dedo */
+    -webkit-tap-highlight-color: transparent; 
 }
 
 html {
@@ -33,6 +35,11 @@ html {
 
 .container {
     padding: .3rem 1.3rem;
+}
+
+::selection {
+    user-select: none;
+    background: transparent;
 }
 
 
