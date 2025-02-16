@@ -1,0 +1,379 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+    list-style: none;
+    text-decoration: none;
+    outline: none;
+}
+
+:root {
+    --background: #fff;
+    --background-screen: #f0f0f0;
+    --black: #000;
+    --gray: #a1a1a1;
+    --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    --white: #fff;
+    --orange: #ff5227;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: "Poppins", serif;
+    overflow: hidden;
+}
+
+html {
+    font-size: 60.5%;
+
+}
+
+.container {
+    padding: .3rem 1.3rem;
+}
+
+
+/* =================================================================== */
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--background);
+}
+
+
+.wrapper .mobile {
+    min-height: 550px;
+    width: 300px;
+    background-color: var(--black);
+    border-radius: 3rem;
+    padding: 1.2rem;
+    box-shadow: var(--shadow);
+}
+
+.wrapper .mobile .mobile-screen {
+    background-color: var(--background);
+    /* min-height: 60vh; */
+    width: 100%;
+    border-radius: 1.55rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.wrapper .mobile .mobile-screen::after {
+    content: '';
+    position: absolute;
+    width: 45%;
+    height: 2rem;
+    background-color: var(--black);
+    top: 0;
+    right:50%;
+    transform: translate(50%);
+    border-bottom-right-radius: 1.4rem;
+    border-bottom-left-radius: 1.4rem;
+}
+
+
+.wrapper .mobile .mobile-screen::before {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: .3rem;
+    background-color: var(--gray);
+    bottom: .9rem;
+    right:49%;
+    transform: translate(50%);
+    border-radius: 1rem;
+    z-index: 999;
+}
+
+.cam{
+    position: absolute;
+    background-color: var(--gray);
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    top: 2px;
+    left: 89px;
+    z-index: 10;
+}
+
+.header {
+    background-color: var(--background-screen);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    height: 4rem;
+}
+
+
+.header .hours {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.header .icons {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+}
+
+/* ================================================================ */
+
+.main {
+    background-color: var(--background-screen);
+    flex-direction: column;
+    display: flex;
+    gap: 2rem;
+}
+
+
+.infos,
+.menu-infos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 1.1rem;
+    user-select: none;
+    cursor: pointer;
+    /* font-size: 1.4rem; */
+}
+
+.menu-infos {
+    font-size: 1rem;
+    margin-top: 2rem;
+    gap: .8rem;
+    justify-content: space-around;
+}
+
+.infos .picture,
+.menu-infos .menu-picture {
+    background-color: var(--black);
+    color: var(--white);
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.infos .account-number {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.infos .account-number .number:nth-child(1){
+    font-weight: bold;
+}
+
+#arrowMenuAccount {
+    color: var(--black);
+    bottom: 0;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+#arrowMenuAccount:hover,
+#btn-edit:hover,
+#btn-close:hover,
+.menu-infos #changeAccountLogo:hover,
+.menu-infos:hover {
+    opacity: .8;
+}
+
+/*  */
+.box {
+    background-color: var(--white);
+    border-radius: 1rem;
+    padding: 1rem 1.3rem;
+    display: flex;
+    flex-direction: column;
+    height: 10rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.box:hover{
+    transform: scale(1.04);
+}
+
+
+.box i {
+    color: var(--orange);
+    flex: 1;
+    font-size: 1.4rem;
+}
+
+
+
+.main .options-grid {
+    display: grid;
+    margin: 1rem 0rem 2.5rem 0rem;
+    gap: .8rem;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "acessar acessar acessar acessar acessar acessar"
+                         "transferir transferir transferir pagar pagar pagar"
+                         "extrato extrato extrato cartoes cartoes cartoes"
+                         "area area token token ajuda ajuda";
+}
+
+#acessar {
+    grid-area: acessar;
+}
+#transferir {
+    grid-area: transferir;
+}
+#pagar {
+    grid-area: pagar;
+}
+#extrato {
+    grid-area: extrato;
+}
+#cartoes {
+    grid-area: cartoes;
+}
+#area {
+    grid-area: area;
+    height: 8rem;
+}
+#token {
+    grid-area: token;
+    height: 8rem;
+}
+#ajuda {
+    grid-area: ajuda;
+    height: 8rem;
+}
+
+
+/* ============================================================================================== */
+
+.menu{
+    position: absolute;
+    bottom: -300px;
+    left: 0;
+    background-color: var(--background);
+    box-shadow: var(--shadow);
+    width: 100%;
+    height: 250px;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    padding: 3rem 2rem;
+    font-size: 1.4rem;
+    transition: .5s linear;
+    font-size: 1.2rem;
+}
+
+.menu::after {
+    content: '';
+    position: absolute;
+    width: 15%;
+    height: .4rem;
+    background-color: var(--black);
+    opacity: .7;
+    top: .9rem;
+    right:49%;
+    transform: translate(50%);
+    border-radius: 1rem;    
+}
+
+.menu-on {
+    display: block;
+    bottom: 0px;
+}
+
+.menu-title {
+    display: flex;
+    align-items: center;
+    font-weight: 200;
+    transition: all .3s ease;
+    /* justify-content: space-around; */
+}
+
+.menu-title #menu-title-edit {
+    flex: 1;
+    display: flex;
+    font-weight: 400;
+}
+
+.menu-title-btns {
+    display: flex;
+    gap: 1.5rem;
+    cursor: pointer;
+}
+
+
+.menu-infos .menu-picture {
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+.menu-account-number {
+    flex: 1;
+}
+
+.menu-account-number .number-account:nth-child(1){
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 150px;
+
+}
+
+.menu-infos #changeAccountLogo {
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.menu-btns {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-top: 3rem;
+    gap: 1rem;
+}
+
+.menu-btns button {
+    background: red;
+    padding: 1rem;
+    border-radius: .7rem;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+#laranja {
+    background-color: var(--orange);
+    color: var(--white);
+}
+
+#laranja:hover {
+    opacity: .9;
+}
+
+#branco{
+    background-color: transparent;
+    color: var(--black);
+    border: 1px solid var(--black);
+}
+
+#branco:hover {
+    background-color: var(--black);
+    color: var(--white);
+    border: 1px solid var(--black);
+}
